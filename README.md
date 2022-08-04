@@ -1,9 +1,9 @@
-**Tree based ecommerce site**
+# **Tree based ecommerce site**
 Features to be implemented:
 
--Purchasing of a variety of tree seedlings and grown plants.
--Shopping cart tally
--input shipping addresses and send to database
+- Purchasing of a variety of tree seedlings and grown plants
+- Shopping cart tally
+- Input shipping addresses and send to database
 
 **Getting started**
 

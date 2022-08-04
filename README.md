@@ -1,7 +1,11 @@
 # **Tree based ecommerce site**
+
+This ecommerce website will take customers orders of both tree seedlings and mature trees with clickable buttons to add products to the custgomers shopping carts. 
+
 Features to be implemented:
 
 - Purchasing of a variety of tree seedlings and grown plants
+- Clickable buttons
 - Shopping cart tally
 - Input shipping addresses and send to database
 

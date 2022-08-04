@@ -8,7 +8,7 @@ Features to be implemented:
 **Getting started**
 
 Prerequisites:
-- Install latest version of (https://visualstudio.microsoft.com/downloads/)[Visual Studio](free if possible) and Visual Studios Installer
+- Install latest version of (https://visualstudio.microsoft.com/downloads/)[Visual Studio] ad Visual Studios Installer
 - Install the ADO.NET framework using Visual Studios Installer
 
 Contributing

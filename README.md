@@ -1,4 +1,4 @@
-Tree commerce site for practice with bootstrap components
+Tree based ecommerce site
 Features to be implemented:
 
 -Purchasing of a variety of tree seedlings and grown plants.

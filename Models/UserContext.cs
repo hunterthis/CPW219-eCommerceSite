@@ -1,7 +1,7 @@
 ﻿using CPW219_eCommerceSite.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace CPW219_CRUD_Troubleshooting.Models
+namespace CPW219_eCommerceSite.Models
 {
     public class UserContext : DbContext
     {

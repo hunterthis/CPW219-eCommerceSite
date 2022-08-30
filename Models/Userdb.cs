@@ -1,4 +1,7 @@
-﻿namespace CPW219_eCommerceSite.Models
+﻿using CPW219_eCommerceSite.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace CPW219_eCommerceSite.Models
 {
     public static class UserDb
     {
@@ -15,11 +18,11 @@
                     select s).ToList(); // need to fix, cannot access database
         }
 
-        public static User GetUser(UserContext context, int id)
+        public static User GetUser(UserContext context, string id)
         {
             User p2 = context
                             .Users
-                            .Where(s => s.UserId == id)
+                            .Where(s => s.Email == id)
                             .Single();
             return p2;
         }

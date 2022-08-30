@@ -158,5 +158,12 @@ namespace CPW219_eCommerceSite.Controllers
         {
           return (_context.Users?.Any(e => e.Email == id)).GetValueOrDefault();
         }
+        [HttpGet]
+        public IActionResult Login() 
+        {
+            return View();
+        }
+
+
     }
 }

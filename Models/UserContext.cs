@@ -11,5 +11,7 @@ namespace CPW219_eCommerceSite.Models
         }
 
         public DbSet<User> Users { get; set; }
+
+        public DbSet<CPW219_eCommerceSite.Models.LoginViewModel>? LoginViewModel { get; set; }
     }
 }

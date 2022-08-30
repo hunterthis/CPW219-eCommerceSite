@@ -158,5 +158,28 @@ namespace CPW219_eCommerceSite.Controllers
         {
           return (_context.Users?.Any(e => e.Email == id)).GetValueOrDefault();
         }
+        [HttpGet]
+        public IActionResult Login() 
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Login(LoginViewModel login)
+        {
+            if (ModelState.IsValid)
+            {
+                User? u = (from user in _context.Users
+                           where user.Email == login.Email &&
+                           user.password == login.Password
+                           select user).SingleOrDefault();
+                if( u != null)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+
+                ModelState.AddModelError("", "No such login found");
+            }
+            return View(login);
+        }
     }
 }

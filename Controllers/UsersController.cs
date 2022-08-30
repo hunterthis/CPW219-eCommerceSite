@@ -176,7 +176,7 @@ namespace CPW219_eCommerceSite.Controllers
                 {
                     return RedirectToAction("Index", "Home");
                 }
-                return View(login);
+                ModelState.AddModelError("", "No such login found");
             }
             return View(login);
         }

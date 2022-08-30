@@ -19,12 +19,17 @@ namespace CPW219_eCommerceSite.Controllers
         }
 
         // GET: Trees
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? id)
         {
             const int TreesToDisplay = 5;
+            const int PageOffset = 1; // page offsets use current page to figure out num of games
+            int currPage = id ?? 1; // set currpage to if val if currpage has val, if not use val of 1
 
             List<Trees> trees = await (from Trees in _context.Trees
-                                      select Trees).ToListAsync(); 
+                                      select Trees)
+                                      .Skip(TreesToDisplay *(currPage-PageOffset))
+                                      .Take(TreesToDisplay)
+                                      .ToListAsync(); 
             return View(trees);
 
         }

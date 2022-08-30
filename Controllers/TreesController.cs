@@ -21,9 +21,12 @@ namespace CPW219_eCommerceSite.Controllers
         // GET: Trees
         public async Task<IActionResult> Index()
         {
-              return _context.Trees != null ? 
-                          View(await _context.Trees.ToListAsync()) :
-                          Problem("Entity set 'UserContext.Trees'  is null.");
+            const int TreesToDisplay = 5;
+
+            List<Trees> trees = await (from Trees in _context.Trees
+                                      select Trees).ToListAsync(); 
+            return View(trees);
+
         }
 
         // GET: Trees/Details/5

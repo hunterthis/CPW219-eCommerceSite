@@ -163,7 +163,21 @@ namespace CPW219_eCommerceSite.Controllers
         {
             return View();
         }
-
-
+        [HttpPost]
+        public IActionResult Login(LoginViewModel login)
+        {
+            if (ModelState.IsValid)
+            {
+                User? u = (from user in _context.Users
+                           where user.Email == login.Email &&
+                           user.password == login.Password
+                           select user).SingleOrDefault();
+                if( u != null)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                return View(login);
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using CPW219_eCommerceSite.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace CPW219_eCommerceSite.Controllers
 {
@@ -20,6 +21,20 @@ namespace CPW219_eCommerceSite.Controllers
             {
                 TempData["Message"] = "Item added to cart, please buy more";
             }
+
+            CartTreeViewModel cartTree = new()
+            {
+                Id = treeToAdd.Id,
+                Name = treeToAdd.Name,
+                Description = treeToAdd.Description
+            };
+
+            List<CartTreeViewModel> cartTrees = new();
+            cartTrees.Add(cartTree);
+
+            string cookieData = JsonConvert.SerializeObject(cartTree);
+
+            TempData["Message"] = "Tree added to cart";
             return RedirectToAction("Index", "Trees");
         }
     }

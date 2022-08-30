@@ -18,9 +18,9 @@ namespace CPW219_eCommerceSite.Controllers
 
             if(treeToAdd == null)
             {
-                return RedirectToAction("Index","Trees");
+                TempData["Message"] = "Item added to cart, please buy more";
             }
-            return View();
+            return RedirectToAction("Index", "Trees");
         }
     }
 }
